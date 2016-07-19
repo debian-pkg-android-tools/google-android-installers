@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    purge)
+        rm -rf /var/cache/google-android-platform-23-installer
+        if [ -e /usr/share/debconf/confmodule ]
+        then
+            # Source debconf library.
+            . /usr/share/debconf/confmodule
+            # Unregister the package
+            if db_get google-android-installers/mirror; then
+                db_unregister google-android-installers/mirror
+            fi
+        fi
+        ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

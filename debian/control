@@ -1,0 +1,76 @@
+Source: google-android-platform-installers
+Section: contrib/devel
+Priority: optional
+Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
+Uploaders: Mouaad Aallam <Mouaad@Aallam.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: https://developer.android.com/about/index.html
+Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-platform-installers.git
+Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-platform-installers.git
+
+Package: google-android-platform-24-installer
+Architecture: all
+Depends: wget,
+         make | build-essential | dpkg-dev,
+         unzip,
+         ca-certificates,
+         debconf,
+         po-debconf,
+         ${misc:Depends}
+Description: Google's Android SDK Platform 24 Installer
+ This package will download the Google's Android SDK Platform 24 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be 
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes platform-24_r01.zip to be
+ downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-23-installer
+Architecture: all
+Depends: wget,
+         make | build-essential | dpkg-dev,
+         unzip,
+         ca-certificates,
+         debconf,
+         po-debconf,
+         ${misc:Depends}
+Description: Google's Android SDK Platform 23 Installer
+ This package will download the Google's Android SDK Platform 23 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be 
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes platform-23_r03.zip to be
+ downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-22-installer
+Architecture: all
+Depends: wget,
+         make | build-essential | dpkg-dev,
+         unzip,
+         ca-certificates,
+         debconf,
+         po-debconf,
+         ${misc:Depends}
+Description: Google's Android SDK Platform 22 Installer
+ This package will download the Google's Android SDK Platform 22 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be 
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-22_r02.zip to be
+ downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
