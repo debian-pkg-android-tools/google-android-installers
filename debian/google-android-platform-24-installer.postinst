@@ -4,7 +4,6 @@ set -e
 
 PKG_NAME="platform-24"
 PKG_VERSION="01"
-ZIP_DIR="android-N"
 TRG_DIR="android-24"
 PKG_SOURCE="$PKG_NAME"_r"$PKG_VERSION".zip
 
@@ -23,7 +22,7 @@ case "$1" in
             cp /usr/share/google-android-"$PKG_NAME"-installer/Makefile \
                /usr/share/google-android-"$PKG_NAME"-installer/"$PKG_NAME"_r"$PKG_VERSION".zip.sha1 \
                /var/cache/google-android-"$PKG_NAME"-installer/
-            make -C /var/cache/google-android-"$PKG_NAME"-installer/ DL_MIRROR="$RET" PKG_NAME="$PKG_NAME" PKG_VERSION="$PKG_VERSION" ZIP_DIR="$ZIP_DIR" TRG_DIR="$TRG_DIR" PKG_SOURCE="$PKG_SOURCE" install
+            make -C /var/cache/google-android-"$PKG_NAME"-installer/ DL_MIRROR="$RET" PKG_NAME="$PKG_NAME" PKG_VERSION="$PKG_VERSION" TRG_DIR="$TRG_DIR" PKG_SOURCE="$PKG_SOURCE" install
 	fi
     ;;
 

@@ -1,16 +1,16 @@
 PKG_SOURCE_URL:=${DL_MIRROR}/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-${PKG_NAME}-installer
-UNPACK_DIR=$(DL_DIR)/${ZIP_DIR}
 INSTALL_DIR=/usr/lib/google-android-sdk/platforms
 DOC_DIR=/usr/share/doc/google-android-${PKG_NAME}
 
 all: $(UNPACK_DIR)/source.properties
 
 install: all
+	$(eval UNPACK_DIR=$(DL_DIR)/$(shell unzip -Z -1 $(DL_DIR)/$(PKG_SOURCE) | head -1))
 	install -d -m0755 $(DOC_DIR)
-	gzip -9 --stdout $(UNPACK_DIR)/data/NOTICE.txt > $(DOC_DIR)/copyright.gz
-	install -m0644 $(UNPACK_DIR)/source.properties $(DOC_DIR)/
+	gzip -9 --stdout $(UNPACK_DIR)data/NOTICE.txt > $(DOC_DIR)/copyright.gz
+	install -m0644 $(UNPACK_DIR)source.properties $(DOC_DIR)/
 	find ${DOC_DIR} | sort >> /var/lib/dpkg/info/google-android-${PKG_NAME}-installer.list
 	install -d -m0755 $(INSTALL_DIR)
 	@if [ ! -d $(INSTALL_DIR)/$(TRG_DIR) ]; then \
