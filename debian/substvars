@@ -1,1 +1,1 @@
-installers:Depends= wget, make | build-essential | dpkg-dev, unzip, ca-certificates, debconf, po-debconf
+googleAndroidInstallers:Depends= wget, make | build-essential | dpkg-dev, unzip, ca-certificates, debconf, po-debconf

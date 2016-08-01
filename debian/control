@@ -11,7 +11,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-platfo
 
 Package: google-android-platform-24-installer
 Architecture: all
-Depends: ${installers:Depends},
+Depends: ${googleAndroidInstallers:Depends},
          ${misc:Depends}
 Description: Google's Android SDK Platform 24 Installer
  This package will download the Google's Android SDK Platform 24 package and
@@ -28,7 +28,7 @@ Description: Google's Android SDK Platform 24 Installer
 
 Package: google-android-platform-23-installer
 Architecture: all
-Depends: ${installers:Depends},
+Depends: ${googleAndroidInstallers:Depends},
          ${misc:Depends}
 Description: Google's Android SDK Platform 23 Installer
  This package will download the Google's Android SDK Platform 23 package and
@@ -45,7 +45,7 @@ Description: Google's Android SDK Platform 23 Installer
 
 Package: google-android-platform-22-installer
 Architecture: all
-Depends: ${installers:Depends},
+Depends: ${googleAndroidInstallers:Depends},
          ${misc:Depends}
 Description: Google's Android SDK Platform 22 Installer
  This package will download the Google's Android SDK Platform 22 package and
