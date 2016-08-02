@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+PKG_NAME="platform-6"
+TRG_DIR="android-6"
+PKG_SOURCE="android-2.0.1_r01-linux.zip"
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+db_get google-android-installers/mirror
+
+case "$1" in
+    configure)
+        if [ "${DEBCONF_RECONFIGURE}" = "1" ]; then
+            db_fset google-android-installers/mirror seen false
+            db_input high google-android-installers/mirror || true
+            db_go || true
+        else
+            install -d -m0700 -o nobody -g nogroup /var/cache/google-android-"$PKG_NAME"-installer
+            cp /usr/share/google-android-"$PKG_NAME"-installer/Makefile \
+               /usr/share/google-android-"$PKG_NAME"-installer/"$PKG_SOURCE".sha1 \
+               /var/cache/google-android-"$PKG_NAME"-installer/
+            make -C /var/cache/google-android-"$PKG_NAME"-installer/ DL_MIRROR="$RET" PKG_NAME="$PKG_NAME" TRG_DIR="$TRG_DIR" PKG_SOURCE="$PKG_SOURCE" install
+	fi
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

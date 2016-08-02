@@ -59,3 +59,343 @@ Description: Google's Android SDK Platform 22 Installer
  downloaded from dl.google.com and/or from other suggested mirrors. The End
  User License Agreement of this binary package is available at
  developer.android.com.
+
+Package: google-android-platform-21-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 21 Installer
+ This package will download the Google's Android SDK Platform 21 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-21_r02.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-20-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 20 Installer
+ This package will download the Google's Android SDK Platform 20 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-20_r02.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-19-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 19 Installer
+ This package will download the Google's Android SDK Platform 19 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-19_r04.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-18-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 18 Installer
+ This package will download the Google's Android SDK Platform 18 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-18_r03.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-17-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 17 Installer
+ This package will download the Google's Android SDK Platform 17 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-17_r03.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-16-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 16 Installer
+ This package will download the Google's Android SDK Platform 16 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-16_r05.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-15-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 15 Installer
+ This package will download the Google's Android SDK Platform 15 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-15_r05.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-14-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 14 Installer
+ This package will download the Google's Android SDK Platform 14 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-14_r04.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-13-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 13 Installer
+ This package will download the Google's Android SDK Platform 13 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-3.2_r01.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-12-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 12 Installer
+ This package will download the Google's Android SDK Platform 12 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-3.1_r03.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-11-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 11 Installer
+ This package will download the Google's Android SDK Platform 11 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-3.0_r02.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-10-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 10 Installer
+ This package will download the Google's Android SDK Platform 10 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.3.3_r02.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-9-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 9 Installer
+ This package will download the Google's Android SDK Platform 9 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.3.1_r02.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-8-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 8 Installer
+ This package will download the Google's Android SDK Platform 8 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.2_r03.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-7-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 7 Installer
+ This package will download the Google's Android SDK Platform 7 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.1_r03.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-6-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 6 Installer
+ This package will download the Google's Android SDK Platform 6 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.0.1_r01-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-5-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 5 Installer
+ This package will download the Google's Android SDK Platform 5 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-2.0_r01-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-4-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 4 Installer
+ This package will download the Google's Android SDK Platform 4 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-1.6_r03-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-3-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 3 Installer
+ This package will download the Google's Android SDK Platform 3 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-1.5_r04-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-platform-2-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google's Android SDK Platform 2 Installer
+ This package will download the Google's Android SDK Platform 2 package and
+ unpacks it into Debian-friendly paths.
+ .
+ Google's Android SDK Platform includes android.jar file with fully compliant
+ Android library. In order to build an Android app, this SDK platform must be
+ specified as build target.
+ .
+ WARNING: Installing this Debian package causes android-1.1_r1-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
