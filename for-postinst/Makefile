@@ -1,7 +1,7 @@
 PKG_SOURCE_URL:=${DL_MIRROR}/android/repository/${PKG_SOURCE}
 
 DL_DIR=/var/cache/google-android-${PKG_NAME}-installer
-INSTALL_DIR=/usr/lib/google-android-sdk/platforms
+INSTALL_DIR=/usr/lib/android-sdk/platforms
 DOC_DIR=/usr/share/doc/google-android-${PKG_NAME}
 
 all: $(UNPACK_DIR)/source.properties
