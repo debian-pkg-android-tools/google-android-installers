@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import urllib3, sys, argparse, re
+import urllib3, sys, argparse, re, datetime, time
 import script.platforms
 from bs4 import BeautifulSoup, Comment
 
@@ -40,6 +40,11 @@ if req.status != 200:
    quit()
 
 soup = BeautifulSoup(req.data, "xml")
+gen_comment = str(soup.findAll(text=lambda text:isinstance(text, Comment))[1])
+gen_dt = re.findall(r"\d+",gen_comment)
+repo_dt = datetime.datetime(int(gen_dt[0]),int(gen_dt[1]),int(gen_dt[2]),int(gen_dt[3]),int(gen_dt[4]),int(gen_dt[5]),int(gen_dt[6]))
+unixtime = time.mktime(repo_dt.timetuple())
+print "Version: \033[1;36m"+str(int(unixtime))+"\033[0m ("+str(repo_dt)+")"
 
 #Get results
 script.platforms.get(soup,".")
