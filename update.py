@@ -17,8 +17,8 @@ print "[1]: https://dl.google.com"
 print "[2]: http://mirrors.neusoft.edu.cn"
 print "[3]: http://android-mirror.bugly.qq.com:8080"
 while True:
-    choice = raw_input("Enter the choice [1/2/3] : ")
-    if choice == "1":
+    choice = raw_input("Enter the choice [1/2/3] (default: 1) : ")
+    if choice == "1" or choice == "":
         url = "https://dl.google.com/android/repository/repository-11.xml"
 	break
     elif choice == "2":
@@ -43,8 +43,14 @@ soup = BeautifulSoup(req.data, "xml")
 gen_comment = str(soup.findAll(text=lambda text:isinstance(text, Comment))[1])
 gen_dt = re.findall(r"\d+",gen_comment)
 repo_dt = datetime.datetime(int(gen_dt[0]),int(gen_dt[1]),int(gen_dt[2]),int(gen_dt[3]),int(gen_dt[4]),int(gen_dt[5]),int(gen_dt[6]))
-unixtime = time.mktime(repo_dt.timetuple())
-print "Version: \033[1;36m"+str(int(unixtime))+"\033[0m ("+str(repo_dt)+")"
+live_version = str(int(time.mktime(repo_dt.timetuple())))
+print "* Repository Version: \033[2;36m"+live_version+"\033[0m ("+str(repo_dt)+")"
+o = open('debian/changelog')
+current_version = re.search(r"\d+",o.readline()).group()
+if current_version == live_version:
+	print "* Package Version: \033[2;32m"+current_version+"\033[0m"
+else:
+	print "* Package Version: \033[0;31m"+current_version+"\033[0m (Package version update is suggested)"
 
 #Get results
 script.platforms.get(soup,".")
