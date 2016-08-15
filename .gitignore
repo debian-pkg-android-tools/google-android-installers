@@ -1,3 +1,6 @@
+*.pyc
+*~
+*.swp
 debian/debhelper-build-stamp
 debian/files
 debian/google-android-platform-*-installer.debhelper.log
