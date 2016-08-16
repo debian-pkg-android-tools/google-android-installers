@@ -1,5 +1,5 @@
 import re, os.path, glob
-import maintscript.platforms_install, maintscript.platforms_postinst, maintscript.platforms_postrm, maintscript.platforms_config, maintscript.platforms_templates, maintscript.platforms_dirs, maintscript.platforms_control
+import maintscript.platforms_install, maintscript.platforms_postinst, maintscript.platforms_postrm, maintscript.platforms_config, maintscript.platforms_templates, maintscript.platforms_dirs, maintscript.platforms_control, maintscript.platforms_lintianoverrides
 
 def get(soup,pif):
     pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
@@ -20,6 +20,7 @@ def get(soup,pif):
         config = pkg_dir+"debian/"+binary+".config"
         templates = pkg_dir+"debian/"+binary+".templates"
         dirs = pkg_dir+"debian/"+binary+".dirs"
+        overrides = pkg_dir+"debian/"+binary+".lintian-overrides"
         control = pkg_dir+"debian/control"
         sha1sum = pkg_dir+"for-postinst/"+archive+".sha1"
         current_sha1sum = ""
@@ -75,7 +76,7 @@ def get(soup,pif):
         # Generate/Update <package>.postinst
         if os.path.isfile(postinst):
             f = open(postinst)
-            match = re.search("r[0-9]+",f.readlines()[6]).group()[1:]
+            match = re.search("r[0-9]+",f.readlines()[7]).group()[1:]
             if int(match) == int(revision):
                 print("\033[0;32mOK\033[0m "+binary+".postinst")
             else:
@@ -117,6 +118,13 @@ def get(soup,pif):
         else:
            print("\033[0;31mNOT EXIST\033[0m "+binary+".dirs")
            maintscript.platforms_dirs.generate(dirs,api_level)
+
+        #Generate <package>.lintian-overrides
+        if os.path.isfile(overrides):
+           print("\033[0;32mOK\033[0m "+binary+".lintian-overrides")
+        else:
+           print("\033[0;31mNOT EXIST\033[0m "+binary+".lintian-overrides")
+           maintscript.platforms_lintianoverrides.generate(overrides,api_level)
 
         #Add package to d/control
         if "platform-"+api_level+"-" in open(control).read():

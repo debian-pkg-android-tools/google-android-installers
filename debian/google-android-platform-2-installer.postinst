@@ -3,6 +3,7 @@
 set -e
 
 PKG_NAME="platform-2"
+INS_DIR="android-sdk/platforms/"
 TRG_DIR="android-2"
 PKG_SOURCE="android-1.1_r1-linux.zip"
 
@@ -21,7 +22,7 @@ case "$1" in
             cp /usr/share/google-android-"$PKG_NAME"-installer/Makefile \
                /usr/share/google-android-"$PKG_NAME"-installer/"$PKG_SOURCE".sha1 \
                /var/cache/google-android-"$PKG_NAME"-installer/
-            make -C /var/cache/google-android-"$PKG_NAME"-installer/ DL_MIRROR="$RET" PKG_NAME="$PKG_NAME" TRG_DIR="$TRG_DIR" PKG_SOURCE="$PKG_SOURCE" install
+            make -C /var/cache/google-android-"$PKG_NAME"-installer/ DL_MIRROR="$RET" PKG_NAME="$PKG_NAME" TRG_DIR="$TRG_DIR" INS_DIR="$INS_DIR" PKG_SOURCE="$PKG_SOURCE" install
 	fi
     ;;
 

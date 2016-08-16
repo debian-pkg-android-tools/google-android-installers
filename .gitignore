@@ -3,7 +3,7 @@
 *.swp
 debian/debhelper-build-stamp
 debian/files
-debian/google-android-platform-*-installer.debhelper.log
-debian/google-android-platform-*-installer.postrm.debhelper
-debian/google-android-platform-*-installer.substvars
-debian/google-android-platform-*-installer/
+debian/google-android-*-installer.debhelper.log
+debian/google-android-*-installer.postrm.debhelper
+debian/google-android-*-installer.substvars
+debian/google-android-*-installer/

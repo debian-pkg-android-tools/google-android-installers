@@ -1,4 +1,4 @@
-Source: google-android-platform-installers
+Source: google-android-installers
 Section: contrib/devel
 Priority: optional
 Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
@@ -6,8 +6,8 @@ Uploaders: Mouaad Aallam <Mouaad@Aallam.com>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.8
 Homepage: https://developer.android.com/about/index.html
-Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-platform-installers.git
-Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-platform-installers.git
+Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-installers.git
+Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-installers.git
 
 Package: google-android-platform-24-installer
 Architecture: all
@@ -396,6 +396,23 @@ Description: Google's Android SDK Platform 2 Installer
  specified as build target.
  .
  WARNING: Installing this Debian package causes android-1.1_r1-linux.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-ndk-installer
+Architecture: amd64
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google Android Native Development Kit (NDK) Installer
+ This package will download the Google Android NDK package and create a Debian
+ package.
+ . 
+ The Android NDK is a toolset that lets you implement parts of your app using
+ native-code languages such as C and C++. For certain types of apps, this can
+ help you reuse existing code libraries written in those languages.
+ .
+ WARNING: Installing this Debian package causes android-ndk-r*-linux-x86_64.zip
  to be downloaded from dl.google.com and/or from other suggested mirrors. The
  End User License Agreement of this binary package is available at
  developer.android.com.

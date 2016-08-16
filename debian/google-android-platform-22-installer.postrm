@@ -2,28 +2,19 @@
 
 set -e
 
-case "$1" in
-    purge)
-        rm -rf /var/cache/google-android-platform-22-installer
-        if [ -e /usr/share/debconf/confmodule ]
-        then
-            # Source debconf library.
-            . /usr/share/debconf/confmodule
-            # Unregister the package
-            if db_get google-android-installers/mirror; then
-                db_unregister google-android-installers/mirror
-            fi
-        fi
-        ;;
+# Source debconf library.
+. /usr/share/debconf/confmodule
 
-    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-        ;;
+#Get owners list
+db_metaget google-android-installers/mirror owners
+OWNERS=$RET
 
-    *)
-        echo "postrm called with unknown argument \`$1'" >&2
-        exit 1
-        ;;
-esac
+#Check if the package is the only owner
+if [ "$OWNERS" = "google-android-platform-22-installer" ]; then
+	#Ask the quastion
+	db_input high google-android-installers/mirror || true
+	db_go
+fi
 
 #DEBHELPER#
 

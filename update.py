@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import urllib3, sys, argparse, re, datetime, time
-import script.platforms
+import script.platforms, script.ndk
 from bs4 import BeautifulSoup, Comment
 
 #Metadata
@@ -54,3 +54,4 @@ else:
 
 #Get results
 script.platforms.get(soup,".")
+script.ndk.get(soup,".")

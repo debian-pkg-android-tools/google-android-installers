@@ -1,5 +1,5 @@
 def generate(dirs,api_level):
-    f = open("maintscript/google-android-platform-X-installer.dirs.ex")
+    f = open("script/maintscript/google-android-platform-X-installer.dirs.ex")
     i = f.read()
     o = open(dirs, "w")
     o.write(i.replace("$X",api_level))

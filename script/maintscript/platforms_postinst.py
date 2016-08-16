@@ -1,5 +1,5 @@
 def generate(postinst,api_level,archive):
-    f = open("maintscript/google-android-platform-X-installer.postinst.ex")
+    f = open("script/maintscript/google-android-platform-X-installer.postinst.ex")
     i = f.read()
     o = open(postinst, "w")
     i = i.replace("$X",api_level).replace("$Y",archive)

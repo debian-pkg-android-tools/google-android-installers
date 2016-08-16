@@ -1,5 +1,5 @@
 def generate(control,api_level,archive):
-    f = open("maintscript/control.ex")
+    f = open("script/maintscript/control.ex")
     i = f.read()
     o = open(control, "a")
     i = i.replace("$X",api_level).replace("$Y",archive)

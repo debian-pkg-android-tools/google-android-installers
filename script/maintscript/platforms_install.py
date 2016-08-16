@@ -1,5 +1,5 @@
 def generate(install,api_level,archive):
-    f = open("maintscript/google-android-platform-X-installer.install.ex")
+    f = open("script/maintscript/google-android-platform-X-installer.install.ex")
     i = f.read()
     o = open(install, "w")
     i = i.replace("$X",api_level).replace("$Y",archive)
