@@ -35,8 +35,8 @@ def get(soup,pif):
                 f.seek(0)
                 i = f.read()
                 o = open(install,"w")
-                o.write(i.replace(current_sha1sum, archive))
-                print("\tUpdated from "+current_sha1sum+" to "+archive)
+                o.write(i.replace(current_sha1sum, archive+".sha1"))
+                print(":... \033[0;34mUPDATED\033[0m from "+current_sha1sum+" to "+archive+".sha1")
                 o.close()
         else:
             print("\033[0;31mNOT EXIST\033[0m "+binary+".install")
@@ -84,7 +84,7 @@ def get(soup,pif):
                 i = f.read()
                 o = open(postinst,"w")
                 o.write(i.replace(match, revision))
-                print(":... UPDATED from revision "+match.group()+" to "+revision)
+                print(":... \033[0;34mUPDATED\033[0m from revision "+match+" to "+revision)
                 o.close()
         else:
             print("\033[0;31mNOT EXIST\033[0m "+binary+".postinst")
