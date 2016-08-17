@@ -1,2 +1,2 @@
-for-postinst/Makefile  usr/share/google-android-platform-12-installer/
-for-postinst/android-3.1_r03.zip.sha1  usr/share/google-android-platform-12-installer/
+for-postinst/default/Makefile  usr/share/google-android-platform-12-installer/
+for-postinst/default/android-3.1_r03.zip.sha1  usr/share/google-android-platform-12-installer/

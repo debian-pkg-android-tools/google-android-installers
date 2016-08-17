@@ -22,7 +22,7 @@ def get(soup,pif):
         dirs = pkg_dir+"debian/"+binary+".dirs"
         overrides = pkg_dir+"debian/"+binary+".lintian-overrides"
         control = pkg_dir+"debian/control"
-        sha1sum = pkg_dir+"for-postinst/"+archive+".sha1"
+        sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
         current_sha1sum = ""
 
         # Generate/Update <package>.install
@@ -44,7 +44,7 @@ def get(soup,pif):
             maintscript.platforms_install.generate(install,api_level,archive)       
 
         # Generate/Update <archive>.sha1
-	current_sha1sum_file = pkg_dir+"for-postinst/"+current_sha1sum
+	current_sha1sum_file = pkg_dir+"for-postinst/default/"+current_sha1sum
         generate_sha1 = False
         if current_sha1sum != "":
             if os.path.isfile(current_sha1sum_file):
@@ -68,7 +68,7 @@ def get(soup,pif):
 
         #Generate SHA1 if needed
         if generate_sha1 == True:
-            i = open(pkg_dir+"for-postinst/"+archive+".sha1", "w+")
+            i = open(pkg_dir+"for-postinst/default/"+archive+".sha1", "w+")
             i.write(sha1+"  "+archive)
             i.close()
             print ":... \033[0;34mGENERATED\033[0m "+archive+".sha1"

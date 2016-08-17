@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import urllib3, sys, argparse, re, datetime, time, subprocess
-import script.platforms, script.ndk
+import script.platforms, script.ndk, script.docs
 from bs4 import BeautifulSoup, Comment
 
 #Metadata
@@ -55,6 +55,7 @@ else:
 #Get results
 script.platforms.get(soup,".")
 script.ndk.get(soup,".")
+script.docs.get(soup,".")
 
 #Removing .pyc files
 subprocess.call(["pyclean", "."])
