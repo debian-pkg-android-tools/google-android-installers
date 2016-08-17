@@ -447,3 +447,22 @@ Description: Android SDK Documentation from Google
  2.5 license is non-free but can be legally distributed by Debian.
  This package avoids the issue all together since each user directly
  downloads the files from Google, and must agree to Google's license.
+
+Package: google-android-m2repository-installer
+Architecture: all
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google Android support m2 repository
+ This package will download the Google Android Support Library repository and 
+ create a Debian package. This is structured as a maven m2 repository of all the
+ versions of the library.
+ . 
+ The Android Support Library offers a number of features that are not built into
+ the framework. These libraries offer backward-compatible versions of new 
+ features, provide useful UI elements that are not included in the framework,
+ and provide a range of utilities that apps can draw on.
+ .
+ WARNING: Installing this Debian package causes android_m2repository_r*.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.

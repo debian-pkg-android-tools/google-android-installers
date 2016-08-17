@@ -63,6 +63,8 @@ def get(soup,pif):
                         generate_sha1 = True
                 elif current_sha1 != sha1:
                     generate_sha1 = True
+            else:
+                generate_sha1 = True
         else:
             generate_sha1 = True
 

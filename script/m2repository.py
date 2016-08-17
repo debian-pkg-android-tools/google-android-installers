@@ -2,27 +2,27 @@ import re, os.path, glob
 
 def get(soup,pif):
     pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
-    #Get SDK docs informations
-    doc_archive = soup.doc.archives.archive
+    #Get m2repository informations
+    m2repository_archive = soup.extra.archives.archive
 
-    archive = doc_archive.url.string
-    sha1 = doc_archive.checksum.string
+    archive = m2repository_archive.url.string
+    sha1 = m2repository_archive.checksum.string
 
-    postinst = pkg_dir+"debian/google-android-sdk-docs-installer.postinst"
-    install = pkg_dir+"debian/google-android-sdk-docs-installer.install"
-    sha1sum = pkg_dir+"for-postinst/docs/"+archive+".sha1"
+    postinst = pkg_dir+"debian/google-android-m2repository-installer.postinst"
+    install = pkg_dir+"debian/google-android-m2repository-installer.install"
+    sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
     current_sha1sum = ""
 
-    print "\033[1;35m- Google Android SDK Docs\033[0m"
+    print "\033[1;34m- Android M2 Repository\033[0m"
 
     # Generate/Update <package>.install
     if os.path.isfile(install):
         f = open(install)
-        current_sha1sum = re.search("docs-.+.zip.sha1",f.readlines()[1]).group()
+        current_sha1sum = re.search("android_m2repository.+.zip.sha1",f.readlines()[1]).group()
         if current_sha1sum == archive+".sha1":
-            print("\033[0;32mOK\033[0m google-android-sdk-docs-installer.install")
+            print("\033[0;32mOK\033[0m google-android-m2repository-installer.install")
         else:
-            print("\033[0;33mOUTDATED\033[0m google-android-sdk-docs-installer.install")
+            print("\033[0;33mOUTDATED\033[0m google-android-m2repository-installer.install")
             f.seek(0)
             i = f.read()
             o = open(install,"w")
@@ -30,10 +30,10 @@ def get(soup,pif):
             print(":... \033[0;34mUPDATED\033[0m from "+current_sha1sum+" to "+archive)
             o.close()
     else:
-         print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.install")
+         print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.install")
 
     # Generate/Update <archive>.sha1
-    current_sha1sum_file = pkg_dir+"for-postinst/docs/"+current_sha1sum
+    current_sha1sum_file = pkg_dir+"for-postinst/default/"+current_sha1sum
     generate_sha1 = False
     if current_sha1sum != "":
         if os.path.isfile(current_sha1sum_file):
@@ -59,7 +59,7 @@ def get(soup,pif):
 
     #Generate SHA1 if needed
     if generate_sha1 == True:
-        i = open(pkg_dir+"for-postinst/docs/"+archive+".sha1", "w+")
+        i = open(pkg_dir+"for-postinst/default/"+archive+".sha1", "w+")
         i.write(sha1+"  "+archive)
         i.close()
         print ":... \033[0;34mGENERATED\033[0m "+archive+".sha1"
@@ -67,11 +67,11 @@ def get(soup,pif):
     # Generate/Update <package>.postinst
     if os.path.isfile(postinst):
         f = open(postinst)
-        match = re.search("docs-.+.zip",f.readlines()[4]).group()
+        match = re.search("android_m2repository.+.zip",f.readlines()[7]).group()
         if match == archive:
-            print("\033[0;32mOK\033[0m google-android-sdk-docs-installer.postinst")
+            print("\033[0;32mOK\033[0m google-android-m2repository-installer.postinst")
         else:
-            print("\033[0;33mOUTDATED\033[0m google-android-sdk-docs-installer.postinst")
+            print("\033[0;33mOUTDATED\033[0m google-android-m2repository-installer.postinst")
             f.seek(0)
             i = f.read()
             o = open(postinst,"w")
@@ -79,5 +79,5 @@ def get(soup,pif):
             print(":... \033[0;34mUPDATED\033[0m from "+match+" to "+archive)
             o.close()
     else:
-        print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.postinst")    
+        print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.postinst")    
 
