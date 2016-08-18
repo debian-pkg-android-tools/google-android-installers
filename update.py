@@ -70,11 +70,12 @@ max_live = 0
 if int(repo_live_version) > int(addon_live_version):
     max_live = int(repo_live_version)
 else:
-    max_live = addon_live_version
+    max_live = int(addon_live_version)
 
 o = open('debian/changelog')
 current_version = re.search(r"\d+",o.readline()).group()
-if int(current_version) >= max_live:
+
+if int(current_version) == max_live:
 	print "* Package Version: \033[2;32m"+current_version+"\033[0m"
 else:
 	print "* Package Version: \033[0;31m"+current_version+"\033[0m (Version update to \033[1;4m"+str(max_live)+"\033[0m is suggested)"
