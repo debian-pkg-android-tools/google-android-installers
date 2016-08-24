@@ -2,10 +2,10 @@
 
 set -e
 
-PKG_NAME="platform-24"
-INS_DIR="android-sdk/platforms/"
-TRG_DIR="android-24"
-PKG_SOURCE="platform-24_r02.zip"
+PKG_NAME="build-tools-17"
+INS_DIR="android-sdk/build-tools/"
+TRG_DIR="17.0.0"
+PKG_SOURCE="build-tools_r17-linux.zip"
 
 # Source debconf library.
 . /usr/share/debconf/confmodule

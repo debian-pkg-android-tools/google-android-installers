@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import urllib3, sys, argparse, re, datetime, time, subprocess
-import script.platforms, script.ndk, script.docs, script.m2repository
+import script.platforms, script.ndk, script.docs, script.m2repository, script.buildtools
 from bs4 import BeautifulSoup, Comment
 
 #Metadata
@@ -85,6 +85,7 @@ script.platforms.get(repo,".")
 script.ndk.get(repo,".")
 script.docs.get(repo,".")
 script.m2repository.get(addon,".")
+script.buildtools.get(repo,".")
 
 #Removing .pyc files
 subprocess.call(["pyclean", "."])

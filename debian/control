@@ -466,3 +466,139 @@ Description: Google Android support m2 repository
  be downloaded from dl.google.com and/or from other suggested mirrors. The End
  User License Agreement of this binary package is available at
  developer.android.com.
+
+Package: google-android-build-tools-24-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 24 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r24.0.2-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-23-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 23 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r23.0.3-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-22-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 22 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r22.0.1-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-21-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 21 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r21.1.2-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-20-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 20 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r20-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-19-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 19 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r19.0.3-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-18-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 18 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r18.1.1-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.
+
+Package: google-android-build-tools-17-installer
+Multi-Arch: foreign
+Architecture: i386
+Depends: zlib1g,
+         libstdc++6,
+         ${googleAndroidInstallers:Depends},
+         ${misc:Depends},
+Description: Google build tools 17 for Android (aapt, aidl, dexdump, dx)
+ This package will download the binary Google Android build tools and create a
+ Debian package.  The build tools are used in the process of assembling the
+ java code into the APK package.  They can also be useful for inspecting APKs.
+ .
+ WARNING: Installing this Debian package causes build-tools_r17-linux.zip to
+ be downloaded from dl.google.com and/or from other suggested mirrors. The End
+ User License Agreement of this binary package is available at
+ developer.android.com.

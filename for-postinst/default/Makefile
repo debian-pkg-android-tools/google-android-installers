@@ -12,6 +12,9 @@ install: all
 	@if [ -f $(UNPACK_DIR)source.properties ]; then \
 		install -m0644 $(UNPACK_DIR)source.properties $(DOC_DIR)/ ; \
         fi
+	@if [ -f $(UNPACK_DIR)NOTICE.txt ]; then \
+		gzip -9 --stdout $(UNPACK_DIR)/NOTICE.txt > $(DOC_DIR)/copyright.gz ; \
+        fi
 	find ${DOC_DIR} | sort >> /var/lib/dpkg/info/google-android-${PKG_NAME}-installer.list
 	install -d -m0755 $(INSTALL_DIR)
 	@if [ ! -d $(INSTALL_DIR)$(TRG_DIR) ]; then \
