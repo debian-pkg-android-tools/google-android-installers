@@ -3,17 +3,18 @@ import re, os.path, glob
 def get(soup,pif):
     pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
     #Get SDK docs informations
-    doc_archive = soup.doc.archives.archive
+    doc_archive = soup.doc
 
-    archive = doc_archive.url.string
-    sha1 = doc_archive.checksum.string
+    archive = doc_archive.archives.archive.url.string
+    sha1 = doc_archive.archives.archive.checksum.string
 
     postinst = pkg_dir+"debian/google-android-sdk-docs-installer.postinst"
     install = pkg_dir+"debian/google-android-sdk-docs-installer.install"
     sha1sum = pkg_dir+"for-postinst/docs/"+archive+".sha1"
     current_sha1sum = ""
 
-    print "\033[1;35m- Google Android SDK Docs\033[0m"
+    version = doc_archive.find('api-level').string
+    print "\033[1;35m- Google Android SDK Docs\033[0m ("+version+")"
 
     # Generate/Update <package>.install
     if os.path.isfile(install):

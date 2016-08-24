@@ -13,7 +13,8 @@ def get(soup,pif):
     sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
     current_sha1sum = ""
 
-    print "\033[1;34m- Android M2 Repository\033[0m"
+    version = re.search(r"\d{2}",archive).group()
+    print "\033[1;34m- Android M2 Repository\033[0m ("+version+")"
 
     # Generate/Update <package>.install
     if os.path.isfile(install):

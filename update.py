@@ -19,15 +19,15 @@ print "[3]: http://android-mirror.bugly.qq.com:8080"
 while True:
     choice = raw_input("Enter the choice [1/2/3] (default: 1) : ")
     if choice == "1" or choice == "":
-        repo_url = "https://dl.google.com/android/repository/repository-11.xml"
+        repo_url = "https://dl.google.com/android/repository/repository-12.xml"
         addon_url = "https://dl.google.com/android/repository/addon.xml"
 	break
     elif choice == "2":
-        repo_url = "http://mirrors.neusoft.edu.cn/android/repository/repository-11.xml"
+        repo_url = "http://mirrors.neusoft.edu.cn/android/repository/repository-12.xml"
         addon_url = "http://mirrors.neusoft.edu.cn/android/repository/addon.xml"
 	break
     elif choice == "3":
-        repo_url = "http://android-mirror.bugly.qq.com:8080/android/repository/repository-11.xml"
+        repo_url = "http://android-mirror.bugly.qq.com:8080/android/repository/repository-12.xml"
         addon_url = "http://android-mirror.bugly.qq.com:8080/android/repository/addon.xml"
         break
     else:

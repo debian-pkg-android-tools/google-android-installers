@@ -14,7 +14,7 @@ def get(soup,pif):
     sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
     current_sha1sum = ""
 
-    print "\033[1;36m- Google Android NDK\033[0m"
+    print "\033[1;36m- Google Android NDK\033[0m ("+revision+")"
 
     # Generate/Update <package>.install
     if os.path.isfile(install):

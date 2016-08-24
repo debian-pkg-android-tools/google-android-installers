@@ -7,7 +7,6 @@ def get(soup,pif):
     platforms_list = soup.findAll('platform') 
     # Show results
     for platform in platforms_list:
-        print(("\033[1;33m- "+platform.description.string+"\033[0m"))
         api_level = platform.find('api-level').string
         version =  platform.version.string
         archive = platform.archives.archive.url.string
@@ -24,6 +23,8 @@ def get(soup,pif):
         control = pkg_dir+"debian/control"
         sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
         current_sha1sum = ""
+
+        print(("\033[1;33m- "+platform.description.string+"\033[0m ("+version+")"))
 
         # Generate/Update <package>.install
         if os.path.isfile(install):
