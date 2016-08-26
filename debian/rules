@@ -1,5 +1,13 @@
 #!/usr/bin/make -f
 
+BUILD_TOOLS_17_VERSION = 17.0.0
+BUILD_TOOLS_18_VERSION = 18.1.1
+BUILD_TOOLS_19_VERSION = 19.0.3
+BUILD_TOOLS_20_VERSION = 20.0.0
+BUILD_TOOLS_21_VERSION = 21.1.2
+BUILD_TOOLS_22_VERSION = 22.0.1
+BUILD_TOOLS_23_VERSION = 23.0.3
+BUILD_TOOLS_24_VERSION = 24.0.2
 PLATFORM_2_VERSION = 2+r1
 PLATFORM_3_VERSION = 3+r04
 PLATFORM_4_VERSION = 4+r03
@@ -52,3 +60,11 @@ override_dh_gencontrol:
 	dh_gencontrol -pgoogle-android-platform-4-installer -- -v$(PLATFORM_4_VERSION) -Tdebian/substvars
 	dh_gencontrol -pgoogle-android-platform-3-installer -- -v$(PLATFORM_3_VERSION) -Tdebian/substvars
 	dh_gencontrol -pgoogle-android-platform-2-installer -- -v$(PLATFORM_2_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-24-installer -- -v$(BUILD_TOOLS_24_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-23-installer -- -v$(BUILD_TOOLS_23_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-22-installer -- -v$(BUILD_TOOLS_22_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-21-installer -- -v$(BUILD_TOOLS_21_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-20-installer -- -v$(BUILD_TOOLS_20_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-19-installer -- -v$(BUILD_TOOLS_19_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-18-installer -- -v$(BUILD_TOOLS_18_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-build-tools-17-installer -- -v$(BUILD_TOOLS_17_VERSION) -Tdebian/substvars

@@ -1,5 +1,5 @@
 import re, os.path, glob
-import maintscript.buildtools_install, maintscript.buildtools_postinst, maintscript.buildtools_postrm, maintscript.buildtools_config, maintscript.buildtools_templates, maintscript.buildtools_dirs, maintscript.buildtools_control, maintscript.buildtools_lintianoverrides
+import maintscript.buildtools_install, maintscript.buildtools_postinst, maintscript.buildtools_postrm, maintscript.buildtools_config, maintscript.buildtools_templates, maintscript.buildtools_dirs, maintscript.buildtools_control, maintscript.buildtools_lintianoverrides, maintscript.buildtools_rules
 
 pkg_dir = ""
 
@@ -34,6 +34,7 @@ def gen(buildtools):
         dirs = pkg_dir+"debian/"+binary+".dirs"
         overrides = pkg_dir+"debian/"+binary+".lintian-overrides"
         control = pkg_dir+"debian/control"
+        rules = pkg_dir+"debian/rules"
         sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
         current_sha1sum = ""
     
@@ -149,3 +150,6 @@ def gen(buildtools):
         else:
            print("\033[0;31mNOT EXIST\033[0m "+binary+" in d/control")
            maintscript.buildtools_control.generate(control,api_level,archive)
+
+        # Add package to d/rules
+        maintscript.buildtools_rules.generate(rules,api_level,version)
