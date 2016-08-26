@@ -12,6 +12,7 @@ def get(soup,pif):
     postinst = pkg_dir+"debian/google-android-ndk-installer.postinst"
     install = pkg_dir+"debian/google-android-ndk-installer.install"
     sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
+    rules = pkg_dir+"debian/rules"
     current_sha1sum = ""
 
     print "\033[1;36m- Google Android NDK\033[0m ("+revision+")"
@@ -58,7 +59,7 @@ def get(soup,pif):
     else:
         generate_sha1 = True
 
-    #Generate SHA1 if needed
+    # Generate SHA1 if needed
     if generate_sha1 == True:
         i = open(pkg_dir+"for-postinst/default/"+archive+".sha1", "w+")
         i.write(sha1+"  "+archive)
@@ -82,3 +83,16 @@ def get(soup,pif):
     else:
         print("\033[0;31mNOT EXIST\033[0m google-android-ndk-installer.postinst")    
 
+    #Update d/rules
+    f = open(rules,"r")
+    i = f.read()
+    f.close()
+    match = re.search("NDK_VERSION = \d+(.+)?",i)
+    if match.group() == "NDK_VERSION = "+revision:
+        print "\033[0;32mOK\033[0m google-android-platform-"+api_level+"-installer in d/rules"
+    else:
+        o = open(rules, "w")
+        i = i.replace(match.group(),"NDK_VERSION = "+revision)
+        o.write(i)
+        o.close()
+        print ":... \033[0;34mUPDATED\033[0m google-android-ndk-installer to revision "+revision
