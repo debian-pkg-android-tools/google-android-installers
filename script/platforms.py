@@ -1,5 +1,5 @@
 import re, os.path, glob
-import maintscript.platforms_install, maintscript.platforms_postinst, maintscript.platforms_postrm, maintscript.platforms_config, maintscript.platforms_templates, maintscript.platforms_dirs, maintscript.platforms_control, maintscript.platforms_lintianoverrides
+import maintscript.platforms_install, maintscript.platforms_postinst, maintscript.platforms_postrm, maintscript.platforms_config, maintscript.platforms_templates, maintscript.platforms_dirs, maintscript.platforms_control, maintscript.platforms_lintianoverrides, maintscript.platforms_rules
 
 def get(soup,pif):
     pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
@@ -21,6 +21,7 @@ def get(soup,pif):
         dirs = pkg_dir+"debian/"+binary+".dirs"
         overrides = pkg_dir+"debian/"+binary+".lintian-overrides"
         control = pkg_dir+"debian/control"
+        rules = pkg_dir+"debian/rules"
         sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
         current_sha1sum = ""
 
@@ -135,3 +136,6 @@ def get(soup,pif):
         else:
            print("\033[0;31mNOT EXIST\033[0m "+binary+" in d/control")
            maintscript.platforms_control.generate(control,api_level,archive)
+
+        #Add package to d/rules
+        maintscript.platforms_rules.generate(rules,api_level,revision)

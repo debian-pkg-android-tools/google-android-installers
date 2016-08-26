@@ -1,7 +1,54 @@
 #!/usr/bin/make -f
 
+PLATFORM_2_VERSION = 2+r1
+PLATFORM_3_VERSION = 3+r04
+PLATFORM_4_VERSION = 4+r03
+PLATFORM_5_VERSION = 5+r01
+PLATFORM_6_VERSION = 6+r01
+PLATFORM_7_VERSION = 7+r03
+PLATFORM_8_VERSION = 8+r03
+PLATFORM_9_VERSION = 9+r02
+PLATFORM_10_VERSION = 10+r02
+PLATFORM_11_VERSION = 11+r02
+PLATFORM_12_VERSION = 12+r03
+PLATFORM_13_VERSION = 13+r01
+PLATFORM_14_VERSION = 14+r04
+PLATFORM_15_VERSION = 15+r05
+PLATFORM_16_VERSION = 16+r05
+PLATFORM_17_VERSION = 17+r03
+PLATFORM_18_VERSION = 18+r03
+PLATFORM_19_VERSION = 19+r04
+PLATFORM_20_VERSION = 20+r02
+PLATFORM_21_VERSION = 21+r02
+PLATFORM_22_VERSION = 22+r02
+PLATFORM_23_VERSION = 23+r03
+PLATFORM_24_VERSION = 24+r02
+
 %:
-	dh $@ 
+	dh $@
 
 override_dh_gencontrol:
 	dh_gencontrol -- -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-24-installer -- -v$(PLATFORM_24_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-23-installer -- -v$(PLATFORM_23_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-22-installer -- -v$(PLATFORM_22_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-21-installer -- -v$(PLATFORM_21_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-20-installer -- -v$(PLATFORM_20_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-19-installer -- -v$(PLATFORM_19_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-18-installer -- -v$(PLATFORM_18_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-17-installer -- -v$(PLATFORM_17_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-16-installer -- -v$(PLATFORM_16_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-15-installer -- -v$(PLATFORM_15_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-14-installer -- -v$(PLATFORM_14_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-13-installer -- -v$(PLATFORM_13_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-12-installer -- -v$(PLATFORM_12_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-11-installer -- -v$(PLATFORM_11_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-10-installer -- -v$(PLATFORM_10_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-9-installer -- -v$(PLATFORM_9_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-8-installer -- -v$(PLATFORM_8_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-7-installer -- -v$(PLATFORM_7_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-6-installer -- -v$(PLATFORM_6_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-5-installer -- -v$(PLATFORM_5_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-4-installer -- -v$(PLATFORM_4_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-3-installer -- -v$(PLATFORM_3_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-platform-2-installer -- -v$(PLATFORM_2_VERSION) -Tdebian/substvars
