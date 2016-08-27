@@ -11,9 +11,11 @@ def get(soup,pif):
     postinst = pkg_dir+"debian/google-android-sdk-docs-installer.postinst"
     install = pkg_dir+"debian/google-android-sdk-docs-installer.install"
     sha1sum = pkg_dir+"for-postinst/docs/"+archive+".sha1"
+    rules = pkg_dir+"debian/rules"
     current_sha1sum = ""
 
     version = doc_archive.find('api-level').string
+    revision = re.search("_r[0-9]*",archive).group()[2:]
     print "\033[1;35m- Google Android SDK Docs\033[0m ("+version+")"
 
     # Generate/Update <package>.install
@@ -80,5 +82,18 @@ def get(soup,pif):
             print(":... \033[0;34mUPDATED\033[0m from "+match+" to "+archive)
             o.close()
     else:
-        print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.postinst")    
+        print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.postinst")
 
+    # Update d/rules
+    f = open(rules,"r")
+    i = f.read()
+    f.close()
+    match = re.search("SDK_DOCS_VERSION = \d+\+r\d+",i)
+    if match.group() == "SDK_DOCS_VERSION = "+version+"+r"+revision:
+        print "\033[0;32mOK\033[0m google-android-sdk-docs-installer in d/rules"
+    else:
+        o = open(rules, "w")
+        i = i.replace(match.group(),"SDK_DOCS_VERSION = "+version+"+r"+revision)
+        o.write(i)
+        o.close()
+        print ":... \033[0;34mUPDATED\033[0m google-android-sdk-docs-installer to "+version+"+r"+revision

@@ -11,10 +11,11 @@ def get(soup,pif):
     postinst = pkg_dir+"debian/google-android-m2repository-installer.postinst"
     install = pkg_dir+"debian/google-android-m2repository-installer.install"
     sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
+    rules = pkg_dir+"debian/rules"
     current_sha1sum = ""
 
-    version = re.search(r"\d{2}",archive).group()
-    print "\033[1;34m- Android M2 Repository\033[0m ("+version+")"
+    revision = soup.extra.revision.major.string
+    print "\033[1;34m- Android M2 Repository\033[0m ("+revision+")"
 
     # Generate/Update <package>.install
     if os.path.isfile(install):
@@ -80,5 +81,18 @@ def get(soup,pif):
             print(":... \033[0;34mUPDATED\033[0m from "+match+" to "+archive)
             o.close()
     else:
-        print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.postinst")    
+        print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.postinst")
 
+    # Update d/rules
+    f = open(rules,"r")
+    i = f.read()
+    f.close()
+    match = re.search("M2REPOSITORY_VERSION = \d+",i)
+    if match.group() == "M2REPOSITORY_VERSION = "+revision:
+        print "\033[0;32mOK\033[0m google-android-m2repository-installer in d/rules"
+    else:
+        o = open(rules, "w")
+        i = i.replace(match.group(),"M2REPOSITORY_VERSION = "+revision)
+        o.write(i)
+        o.close()
+        print ":... \033[0;34mUPDATED\033[0m google-android-m2repository-installer to "+revision

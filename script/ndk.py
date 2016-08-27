@@ -81,15 +81,15 @@ def get(soup,pif):
             print(":... \033[0;34mUPDATED\033[0m from "+match+" to "+archive)
             o.close()
     else:
-        print("\033[0;31mNOT EXIST\033[0m google-android-ndk-installer.postinst")    
+        print("\033[0;31mNOT EXIST\033[0m google-android-ndk-installer.postinst")
 
-    #Update d/rules
+    # Update d/rules
     f = open(rules,"r")
     i = f.read()
     f.close()
     match = re.search("NDK_VERSION = \d+(.+)?",i)
-    if match.group() == "NDK_VERSION = "+revision:
-        print "\033[0;32mOK\033[0m google-android-platform-"+api_level+"-installer in d/rules"
+    if (match.group() == "NDK_VERSION = "+revision or match.group() == "NDK_VERSION = "+revision[:2]+"."+revision[2:]): #2nd condition can removed later
+        print "\033[0;32mOK\033[0m google-android-ndk-installer in d/rules"
     else:
         o = open(rules, "w")
         i = i.replace(match.group(),"NDK_VERSION = "+revision)
