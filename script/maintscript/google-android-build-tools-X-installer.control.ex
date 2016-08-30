@@ -1,7 +1,7 @@
 
 Package: google-android-build-tools-$X-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},

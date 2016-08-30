@@ -469,7 +469,7 @@ Description: Google Android support m2 repository
 
 Package: google-android-build-tools-24-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -486,7 +486,7 @@ Description: Google build tools 24 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-23-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -503,7 +503,7 @@ Description: Google build tools 23 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-22-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -520,7 +520,7 @@ Description: Google build tools 22 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-21-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -537,7 +537,7 @@ Description: Google build tools 21 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-20-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -554,7 +554,7 @@ Description: Google build tools 20 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-19-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -571,7 +571,7 @@ Description: Google build tools 19 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-18-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
@@ -588,7 +588,7 @@ Description: Google build tools 18 for Android (aapt, aidl, dexdump, dx)
 
 Package: google-android-build-tools-17-installer
 Multi-Arch: foreign
-Architecture: i386
+Architecture: i386 amd64
 Depends: zlib1g,
          libstdc++6,
          ${googleAndroidInstallers:Depends},
