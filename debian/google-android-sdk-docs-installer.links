@@ -1,3 +1,0 @@
-#!/usr/bin/dh-exec
-
-usr/share/doc/google-android-sdk-docs/docs usr/lib/android-sdk/docs
