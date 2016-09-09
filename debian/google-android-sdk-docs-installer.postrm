@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+#echo "google-android-build-tools postrm: $@"
+
+if [ "$1" = "purge" ]
+then
+	rm -rf /var/cache/google-android-sdk-docs-installer
+	if [ -e /usr/share/debconf/confmodule ]
+	then
+		# Source debconf library.
+		. /usr/share/debconf/confmodule
+		# Unregister the package
+		if db_get google-android-installers/mirror; then
+			db_unregister google-android-installers/mirror
+		fi
+	fi
+fi
+
+#DEBHELPER#
+
+exit 0
