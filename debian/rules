@@ -32,6 +32,7 @@ PLATFORM_22_VERSION = 22+r02
 PLATFORM_23_VERSION = 23+r03
 PLATFORM_24_VERSION = 24+r02
 NDK_VERSION = 12.b+1
+M2REPOSITORY_VERSION = 36
 
 %:
 	dh $@
@@ -70,3 +71,4 @@ override_dh_gencontrol:
 	dh_gencontrol -pgoogle-android-build-tools-18-installer -- -v$(BUILD_TOOLS_18_VERSION) -Tdebian/substvars
 	dh_gencontrol -pgoogle-android-build-tools-17-installer -- -v$(BUILD_TOOLS_17_VERSION) -Tdebian/substvars
 	dh_gencontrol -pgoogle-android-ndk-installer -- -v$(NDK_VERSION) -Tdebian/substvars
+	dh_gencontrol -pgoogle-android-m2repository-installer -- -v$(M2REPOSITORY_VERSION) -Tdebian/substvars
