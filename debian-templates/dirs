@@ -1,0 +1,2 @@
+var/cache/google-android-%PKG_NAME%-installer
+usr/share/doc/google-android-%PKG_NAME%

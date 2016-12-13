@@ -2,7 +2,7 @@
 
 set -e
 
-PKG_SOURCE="docs-23_r01.zip"
+PKG_SOURCE="docs-24_r01.zip"
 
 . /usr/share/debconf/confmodule
 db_get google-android-installers/mirror

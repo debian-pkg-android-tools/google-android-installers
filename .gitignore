@@ -1,9 +1,11 @@
 *.pyc
 *~
 *.swp
-debian/debhelper-build-stamp
-debian/files
-debian/google-android-*-installer.debhelper.log
-debian/google-android-*-installer.postrm.debhelper
-debian/google-android-*-installer.substvars
-debian/google-android-*-installer/
+
+source-packages/google-android-*-installer/debian/debhelper-build-stamp
+source-packages/google-android-*-installer/debian/files
+source-packages/google-android-*-installer/debian/google-android-*-installer.debhelper.log
+source-packages/google-android-*-installer/debian/google-android-*-installer.postrm.debhelper
+source-packages/google-android-*-installer/debian/google-android-*-installer.substvars
+source-packages/google-android-*-installer/debian/google-android-*-installer/
+source-packages/google-android-*-installer_*.*

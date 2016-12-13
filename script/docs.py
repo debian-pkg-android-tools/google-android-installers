@@ -1,18 +1,47 @@
-import re, os.path, glob
+import re, os, glob, shutil, subprocess, sys
 
-def get(soup,pif):
-    pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
+def copy_debian_template(pkg_name):
+    dst = os.path.join('source-packages', 'google-android-' + pkg_name + '-installer', 'debian')
+    po = os.path.join(dst, 'po')
+    source = os.path.join(dst, 'source')
+    if not os.path.exists(source):
+        os.makedirs(source)
+    shutil.copy('debian-templates/compat', dst)
+    shutil.copy('debian-templates/config', dst)
+    shutil.copy('debian-templates/copyright', dst)
+    shutil.copy('debian-templates/dirs', dst)
+    shutil.copy('debian-templates/gbp.conf', dst)
+    shutil.copy('debian-templates/lintian-overrides', dst)
+    shutil.copy('debian-templates/postrm', dst)
+    shutil.copy('debian-templates/rules', dst)
+    shutil.copy('debian-templates/substvars', dst)
+    shutil.copy('debian-templates/templates', dst)
+
+    shutil.copy('debian-templates/source/format', source)
+
+    try:
+        for f in glob.glob(dst + '/[a-rt-z]*'):
+            o = subprocess.check_output(['sed', '-i',
+                                         '-e', 's,%PKG_NAME%,' + pkg_name + ',g',
+                                         f],
+                                    universal_newlines=True)
+    except subprocess.CalledProcessError as e:
+        print(e.output)
+        sys.exit(1)
+
+
+def get(soup):
+    pkg_dir = os.path.join('source-packages', 'google-android-sdk-docs-installer') + '/'
     #Get SDK docs informations
     doc_archive = soup.doc
 
     archive = doc_archive.archives.archive.url.string
     sha1 = doc_archive.archives.archive.checksum.string
 
-    postinst = pkg_dir+"debian/google-android-sdk-docs-installer.postinst"
-    install = pkg_dir+"debian/google-android-sdk-docs-installer.install"
-    sha1sum = pkg_dir+"for-postinst/docs/"+archive+".sha1"
+    postinst = pkg_dir+"debian/postinst"
+    install = pkg_dir+"debian/install"
+    sha1sum = pkg_dir+"for-postinst/"+archive+".sha1"
     rules = pkg_dir+"debian/rules"
-    current_sha1sum = ""
 
     version = doc_archive.find('api-level').string
     revision = re.search("_r[0-9]*",archive).group()[2:]
@@ -35,36 +64,11 @@ def get(soup,pif):
     else:
          print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.install")
 
-    # Generate/Update <archive>.sha1
-    current_sha1sum_file = pkg_dir+"for-postinst/docs/"+current_sha1sum
-    generate_sha1 = False
-    if current_sha1sum != "":
-        if os.path.isfile(current_sha1sum_file):
-            f = open(current_sha1sum_file)
-            current_sha1 = re.search(r'\b[0-9a-f]{5,40}\b',f.readlines()[0]).group()
-            if current_sha1sum_file != sha1sum:
-                # Remove outdated sha1 file
-                try:
-		    os.remove(current_sha1sum_file)
-	        except OSError:
-		    pass
-                # Generate new sha1 file
-                if os.path.isfile(sha1sum):
-                    print("\033[0;32mOK\033[0m "+archive+".sha1")
-                else:
-                    generate_sha1 = True
-            elif current_sha1 != sha1:
-                generate_sha1 = True
-        else:
-            generate_sha1 = True
-    else:
-        generate_sha1 = True
-
-    #Generate SHA1 if needed
-    if generate_sha1 == True:
-        i = open(pkg_dir+"for-postinst/docs/"+archive+".sha1", "w+")
-        i.write(sha1+"  "+archive)
-        i.close()
+    #Generate SHA1
+    for f in glob.glob(pkg_dir+"for-postinst/*.sha1"):
+        os.remove(f)  # delete old ones
+    with open(pkg_dir+"for-postinst/"+archive+".sha1", "w") as fp:
+        fp.write(sha1+"  "+archive)
         print ":... \033[0;34mGENERATED\033[0m "+archive+".sha1"
 
     # Generate/Update <package>.postinst
@@ -84,16 +88,4 @@ def get(soup,pif):
     else:
         print("\033[0;31mNOT EXIST\033[0m google-android-sdk-docs-installer.postinst")
 
-    # Update d/rules
-    f = open(rules,"r")
-    i = f.read()
-    f.close()
-    match = re.search("SDK_DOCS_VERSION = \d+\+r\d+",i)
-    if match.group() == "SDK_DOCS_VERSION = "+version+"+r"+revision:
-        print "\033[0;32mOK\033[0m google-android-sdk-docs-installer in d/rules"
-    else:
-        o = open(rules, "w")
-        i = i.replace(match.group(),"SDK_DOCS_VERSION = "+version+"+r"+revision)
-        o.write(i)
-        o.close()
-        print ":... \033[0;34mUPDATED\033[0m google-android-sdk-docs-installer to "+version+"+r"+revision
+    copy_debian_template('sdk-docs')

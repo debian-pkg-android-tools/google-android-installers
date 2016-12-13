@@ -1,0 +1,1 @@
+google-android-%PKG_NAME%-installer: package-contains-empty-directory usr/share/doc/google-android-%PKG_NAME%/
