@@ -2,10 +2,11 @@ import re, os, glob, shutil, subprocess, sys
 
 def copy_debian_template(pkg_name):
     dst = os.path.join('source-packages', 'google-android-' + pkg_name + '-installer', 'debian')
-    po = os.path.join(dst, 'po')
+
     source = os.path.join(dst, 'source')
     if not os.path.exists(source):
         os.makedirs(source)
+
     shutil.copy('debian-templates/compat', dst)
     shutil.copy('debian-templates/config', dst)
     shutil.copy('debian-templates/copyright', dst)
@@ -19,8 +20,23 @@ def copy_debian_template(pkg_name):
 
     shutil.copy('debian-templates/source/format', source)
 
+    po = os.path.join(dst, 'po')
+    if not os.path.exists(po):
+        os.makedirs(po)
+
+    shutil.copy('debian-templates/po/cs.po', po)
+    shutil.copy('debian-templates/po/de.po', po)
+    shutil.copy('debian-templates/po/fr.po', po)
+    shutil.copy('debian-templates/po/id.po', po)
+    shutil.copy('debian-templates/po/nl.po', po)
+    shutil.copy('debian-templates/po/pt.po', po)
+    shutil.copy('debian-templates/po/templates.pot', po)
+    shutil.copy('debian-templates/po/POTFILES.in', po)
+
     try:
-        for f in glob.glob(dst + '/[a-rt-z]*'):
+        for f in glob.glob(dst + '/*'):
+            if not os.path.isfile(f):
+                continue
             o = subprocess.check_output(['sed', '-i',
                                          '-e', 's,%PKG_NAME%,' + pkg_name + ',g',
                                          f],
