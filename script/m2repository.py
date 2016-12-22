@@ -1,16 +1,18 @@
 import re, os.path, glob
 
-def get(soup,pif):
-    pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
+from script import copy_debian_template
+
+def get(soup):
+    pkg_dir = os.path.join('source-packages', 'google-android-m2repository-installer') + '/'
     #Get m2repository informations
     m2repository_archive = soup.extra.archives.archive
 
     archive = m2repository_archive.url.string
     sha1 = m2repository_archive.checksum.string
 
-    postinst = pkg_dir+"debian/google-android-m2repository-installer.postinst"
-    install = pkg_dir+"debian/google-android-m2repository-installer.install"
-    sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
+    postinst = pkg_dir+"debian/postinst"
+    install = pkg_dir+"debian/install"
+    sha1sum = pkg_dir+"for-postinst/"+archive+".sha1"
     rules = pkg_dir+"debian/rules"
     current_sha1sum = ""
 
@@ -35,7 +37,7 @@ def get(soup,pif):
          print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.install")
 
     # Generate/Update <archive>.sha1
-    current_sha1sum_file = pkg_dir+"for-postinst/default/"+current_sha1sum
+    current_sha1sum_file = pkg_dir+"for-postinst/"+current_sha1sum
     generate_sha1 = False
     if current_sha1sum != "":
         if os.path.isfile(current_sha1sum_file):
@@ -61,7 +63,7 @@ def get(soup,pif):
 
     #Generate SHA1 if needed
     if generate_sha1 == True:
-        i = open(pkg_dir+"for-postinst/default/"+archive+".sha1", "w+")
+        i = open(pkg_dir+"for-postinst/"+archive+".sha1", "w+")
         i.write(sha1+"  "+archive)
         i.close()
         print ":... \033[0;34mGENERATED\033[0m "+archive+".sha1"
@@ -83,16 +85,4 @@ def get(soup,pif):
     else:
         print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.postinst")
 
-    # Update d/rules
-    f = open(rules,"r")
-    i = f.read()
-    f.close()
-    match = re.search("M2REPOSITORY_VERSION = \d+",i)
-    if match.group() == "M2REPOSITORY_VERSION = "+revision:
-        print "\033[0;32mOK\033[0m google-android-m2repository-installer in d/rules"
-    else:
-        o = open(rules, "w")
-        i = i.replace(match.group(),"M2REPOSITORY_VERSION = "+revision)
-        o.write(i)
-        o.close()
-        print ":... \033[0;34mUPDATED\033[0m google-android-m2repository-installer to "+revision
+    copy_debian_template('m2repository')

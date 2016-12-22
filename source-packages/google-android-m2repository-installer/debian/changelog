@@ -1,0 +1,42 @@
+google-android-m2repository-installer (41) unstable; urgency=medium
+
+  * New upstream version
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Thu, 22 Dec 2016 16:28:05 +0000
+
+google-android-m2repository-installer (36+1) unstable; urgency=medium
+
+  * Add French PO translation file (Closes: #835936) 
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Mon, 29 Aug 2016 15:14:23 +0000
+
+google-android-m2repository-installer (36) unstable; urgency=medium
+
+  * Update to revision 36
+  * Add Czech PO translation file (Closes: #834122)
+  * Add Dutch PO translation file (Closes: #834621)
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Sun, 14 Aug 2016 15:53:30 +0000
+
+google-android-m2repository-installer (35+1) unstable; urgency=medium
+
+  * Add Indonesian PO translation (Closes: #833393)
+  * Add Portuguese PO translation (Closes: #833400 #833468)
+  * Add German PO transalation (Closes: #833519)
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Tue, 09 Aug 2016 16:28:10 +0000
+
+google-android-m2repository-installer (35) unstable; urgency=medium
+
+  * Create download folder and download archive as nobody:nogroup
+  * Add mirror choosing feature with debconf shared template
+  * Minor Makefile update (Closes: #832413)
+  * Update to revision 35
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Mon, 04 Jul 2016 20:40:07 +0000
+
+google-android-m2repository-installer (33) unstable; urgency=low
+
+  * Initial release (Closes: #828059)
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Thu, 23 Jun 2016 22:59:38 +0000

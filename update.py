@@ -83,9 +83,9 @@ else:
 #Get results
 script.platforms.get(repo,".")
 script.ndk.get(repo,".")
-script.m2repository.get(addon,".")
 script.buildtools.get(repo,".")
 script.docs.get(repo)
+script.m2repository.get(addon)
 
 #Removing .pyc files
 subprocess.call(["pyclean", "."])
