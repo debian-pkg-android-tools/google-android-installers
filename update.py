@@ -81,11 +81,11 @@ else:
 	print "* Package Version: \033[0;31m"+current_version+"\033[0m (Version update to \033[1;4m"+str(max_live)+"\033[0m is suggested)"
 
 #Get results
-script.platforms.get(repo,".")
-script.ndk.get(repo,".")
-script.buildtools.get(repo,".")
+script.ndk.get(repo)
 script.docs.get(repo)
 script.m2repository.get(addon)
+script.platforms.get(repo)
+script.buildtools.get(repo)
 
 #Removing .pyc files
 subprocess.call(["pyclean", "."])

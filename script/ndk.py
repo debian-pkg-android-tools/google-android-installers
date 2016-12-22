@@ -1,7 +1,9 @@
 import re, os.path, glob
 
-def get(soup,pif):
-    pkg_dir = os.path.join(glob.glob(os.path.expanduser(pif))[0], '')
+from script import copy_debian_template, copy_postinst_Makefile
+
+def get(soup):
+    pkg_dir = os.path.join('source-packages', 'google-android-ndk-installer') + '/'
     #Get NDK informations
     ndk_archive = soup.ndk.archives.archive.find_next_sibling('archive')
 
@@ -9,9 +11,9 @@ def get(soup,pif):
     archive = ndk_archive.url.string
     sha1 = ndk_archive.checksum.string
 
-    postinst = pkg_dir+"debian/google-android-ndk-installer.postinst"
-    install = pkg_dir+"debian/google-android-ndk-installer.install"
-    sha1sum = pkg_dir+"for-postinst/default/"+archive+".sha1"
+    postinst = pkg_dir+"debian/postinst"
+    install = pkg_dir+"debian/install"
+    sha1sum = pkg_dir+"for-postinst/"+archive+".sha1"
     rules = pkg_dir+"debian/rules"
     current_sha1sum = ""
 
@@ -35,7 +37,7 @@ def get(soup,pif):
          print("\033[0;31mNOT EXIST\033[0m google-android-ndk-installer.install")
 
     # Generate/Update <archive>.sha1
-    current_sha1sum_file = pkg_dir+"for-postinst/default/"+current_sha1sum
+    current_sha1sum_file = pkg_dir+"for-postinst/"+current_sha1sum
     generate_sha1 = False
     if current_sha1sum != "":
         if os.path.isfile(current_sha1sum_file):
@@ -61,7 +63,7 @@ def get(soup,pif):
 
     # Generate SHA1 if needed
     if generate_sha1 == True:
-        i = open(pkg_dir+"for-postinst/default/"+archive+".sha1", "w+")
+        i = open(pkg_dir+"for-postinst/"+archive+".sha1", "w+")
         i.write(sha1+"  "+archive)
         i.close()
         print ":... \033[0;34mGENERATED\033[0m "+archive+".sha1"
@@ -83,16 +85,5 @@ def get(soup,pif):
     else:
         print("\033[0;31mNOT EXIST\033[0m google-android-ndk-installer.postinst")
 
-    # Update d/rules
-    f = open(rules,"r")
-    i = f.read()
-    f.close()
-    match = re.search("NDK_VERSION = \d+(.+)?",i)
-    if (match.group() == "NDK_VERSION = "+revision or match.group() == "NDK_VERSION = "+revision[:2]+"."+revision[2:]): #2nd condition can removed later
-        print "\033[0;32mOK\033[0m google-android-ndk-installer in d/rules"
-    else:
-        o = open(rules, "w")
-        i = i.replace(match.group(),"NDK_VERSION = "+revision)
-        o.write(i)
-        o.close()
-        print ":... \033[0;34mUPDATED\033[0m google-android-ndk-installer to revision "+revision
+    copy_debian_template('ndk')
+    copy_postinst_Makefile('ndk')

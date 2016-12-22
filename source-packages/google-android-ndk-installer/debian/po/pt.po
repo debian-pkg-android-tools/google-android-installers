@@ -1,0 +1,38 @@
+# Portuguese translation for google-android-m2repository-installer package
+# Copyright (C) 2016 Miguel Figueiredo <elmig@debianpt.org>
+# This file is distributed under the same license as the google-android-m2repository-installer package.
+# Miguel Figueiredo <elmig@debianpt.org>, 2016
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: google-android-m2repository-installer\n"
+"Report-Msgid-Bugs-To: google-android-platform-installers@packages.debian."
+"org\n"
+"POT-Creation-Date: 2016-07-19 20:36+0000\n"
+"PO-Revision-Date: 2016-08-04 19:30+0100\n"
+"Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\\nLanguage-Team: "
+"Portuguese <traduz@debianpt.org>\n"
+"Language: Portuguese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: select
+#. Description
+#: ../google-android-platform-24-installer.templates:1001
+#: ../google-android-platform-23-installer.templates:1001
+#: ../google-android-platform-22-installer.templates:1001
+msgid "Mirror to download packages ?"
+msgstr "Mirror de onde descarregar os pacotes ?"
+
+#. Type: select
+#. Description
+#: ../google-android-platform-24-installer.templates:1001
+#: ../google-android-platform-23-installer.templates:1001
+#: ../google-android-platform-22-installer.templates:1001
+msgid ""
+"Please select your prefered mirror to download Google's Android packages "
+"from."
+msgstr ""
+"Por favor escolha o seu mirror preferido de onde descarregar os pacotes "
+"Android da Google."

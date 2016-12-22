@@ -1,0 +1,27 @@
+Source: google-android-ndk-installer
+Section: contrib/devel
+Priority: optional
+Maintainer: Android tools Maintainer <android-tools-devel@lists.alioth.debian.org>
+Uploaders: Mouaad Aallam <Mouaad@Aallam.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: https://developer.android.com/ndk/index.html
+Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-ndk-installer.git
+Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-ndk-installer.git
+
+Package: google-android-ndk-installer
+Architecture: amd64
+Depends: ${googleAndroidInstallers:Depends},
+         ${misc:Depends}
+Description: Google Android Native Development Kit (NDK) Installer
+ This package will download the Google Android NDK package and create a Debian
+ package.
+ . 
+ The Android NDK is a toolset that lets you implement parts of your app using
+ native-code languages such as C and C++. For certain types of apps, this can
+ help you reuse existing code libraries written in those languages.
+ .
+ WARNING: Installing this Debian package causes android-ndk-r12-linux-x86_64.zip
+ to be downloaded from dl.google.com and/or from other suggested mirrors. The
+ End User License Agreement of this binary package is available at
+ developer.android.com.
