@@ -2,6 +2,14 @@ import glob, os, shutil, subprocess, sys
 
 from . import *
 
+
+def copy_postinst_Makefile(pkg_name):
+    dst = os.path.join('source-packages', 'google-android-' + pkg_name + '-installer', 'for-postinst')
+    if not os.path.exists(dst):
+        os.makedirs(dst)
+    shutil.copy('for-postinst-templates/Makefile', dst)
+
+
 def copy_debian_template(pkg_name):
     dst = os.path.join('source-packages', 'google-android-' + pkg_name + '-installer', 'debian')
 

@@ -1,6 +1,6 @@
 import re, os.path, glob
 
-from script import copy_debian_template
+from script import copy_debian_template, copy_postinst_Makefile
 
 def get(soup):
     pkg_dir = os.path.join('source-packages', 'google-android-m2repository-installer') + '/'
@@ -86,3 +86,4 @@ def get(soup):
         print("\033[0;31mNOT EXIST\033[0m google-android-m2repository-installer.postinst")
 
     copy_debian_template('m2repository')
+    copy_postinst_Makefile('m2repository')
