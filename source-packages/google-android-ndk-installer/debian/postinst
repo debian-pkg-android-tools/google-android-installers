@@ -5,7 +5,7 @@ set -e
 PKG_NAME="ndk"
 INS_DIR=""
 TRG_DIR="android-ndk/"
-PKG_SOURCE="android-ndk-r12b-linux-x86_64.zip"
+PKG_SOURCE="android-ndk-r13b-linux-x86_64.zip"
 
 # Source debconf library.
 . /usr/share/debconf/confmodule

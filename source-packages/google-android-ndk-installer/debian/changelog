@@ -1,3 +1,9 @@
+google-android-ndk-installer (13b) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Mouaad Aallam <Mouaad@Aallam.com>  Thu, 22 Dec 2016 20:46:00 +0000
+
 google-android-ndk-installer (12.b+1) unstable; urgency=medium
 
   * Add French PO translation file
