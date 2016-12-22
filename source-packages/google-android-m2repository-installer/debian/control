@@ -11,12 +11,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-m2repo
 
 Package: google-android-m2repository-installer
 Architecture: all
-Depends: wget,
-         make | build-essential | dpkg-dev,
-         unzip,
-         ca-certificates,
-         debconf,
-         po-debconf,
+Depends: ${googleAndroidInstallers:Depends},
          ${misc:Depends}
 Description: Google Android support m2 repository
  This package will download the Google Android Support Library repository and 
