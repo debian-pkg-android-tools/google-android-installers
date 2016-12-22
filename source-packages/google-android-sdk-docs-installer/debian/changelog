@@ -1,6 +1,8 @@
 google-android-sdk-docs-installer (24r1) unstable; urgency=medium
 
   * New upstream release
+  * Add French, Dutch PO translation file to google-android-installers
+    (Closes: #837955) (Closes: #837957) (Closes: #838996)
 
  -- Hans-Christoph Steiner <hans@eds.org>  Thu, 22 Dec 2016 15:13:07 +0000
 
