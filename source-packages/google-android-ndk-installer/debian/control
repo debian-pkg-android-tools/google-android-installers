@@ -6,8 +6,8 @@ Uploaders: Mouaad Aallam <Mouaad@Aallam.com>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.8
 Homepage: https://developer.android.com/ndk/index.html
-Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-ndk-installer.git
-Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-ndk-installer.git
+Vcs-Git: https://alioth.debian.org/anonscm/git/android-tools/google-android-installers.git
+Vcs-Browser: https://anonscm.debian.org/cgit/android-tools/google-android-installers.git
 
 Package: google-android-ndk-installer
 Architecture: amd64
