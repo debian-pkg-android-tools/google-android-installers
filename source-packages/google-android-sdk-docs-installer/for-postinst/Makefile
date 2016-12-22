@@ -49,6 +49,7 @@ uninstall:
 		test -d $$d && rmdir $$d || true ; done
 
 $(DL_DIR)/$(UNPACK_DIR)/index.html: $(DL_DIR)/$(PKG_SOURCE)
+	-rm -rf $(UNPACK_DIR)
 	cd $(DL_DIR) && unzip -ou $(PKG_SOURCE)
 
 $(DL_DIR)/$(PKG_SOURCE): $(DL_DIR)
